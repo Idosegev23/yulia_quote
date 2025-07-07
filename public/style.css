@@ -141,7 +141,25 @@ body {
     font-family: 'Courier New', monospace;
     font-size: 0.9rem;
     color: #040240;
+    position: relative;
 }
+
+.typing-text {
+    display: inline;
+}
+
+.typing-cursor {
+    display: inline-block;
+    background-color: #BFF205;
+    width: 2px;
+    height: 1.2em;
+    animation: blink 1s infinite;
+    margin-left: 1px;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
 
 /* Quote Section */
 .quote-section {

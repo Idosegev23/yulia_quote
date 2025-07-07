@@ -188,12 +188,54 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
+// Typing animation for hero code block
+function startTypingAnimation() {
+    const codeText = `function createLandscapeArchitectPage() {
+  const design = buildProfessionalDesign();
+  const content = showcaseGardenProjects();
+  const mobile = ensureMobileResponsive();
+  
+  return { design, content, mobile };
+}`;
+
+    const typingElement = document.getElementById('typing-code');
+    if (!typingElement) return;
+
+    let index = 0;
+    const typingSpeed = 45; // מילישניות בין אותיות
+    const cursor = document.querySelector('.typing-cursor');
+
+    function typeChar() {
+        if (index < codeText.length) {
+            const char = codeText.charAt(index);
+            if (char === '\n') {
+                typingElement.innerHTML += '<br>';
+            } else {
+                typingElement.innerHTML += char;
+            }
+            index++;
+            setTimeout(typeChar, typingSpeed);
+        } else {
+            // כשמסיימים להקליד, מסתירים את הקורסור
+            if (cursor) {
+                cursor.style.display = 'none';
+            }
+        }
+    }
+
+    // התחלת האנימציה אחרי דיליי קצר
+    setTimeout(typeChar, 800);
+}
+
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
     const elementsToAnimate = document.querySelectorAll('.service-card, .additional-services, .additional-info, .contact-info');
     elementsToAnimate.forEach(el => {
         observer.observe(el);
     });
+    
+    // התחלת אנימציית ההקלדה
+    startTypingAnimation();
     
     // Track WhatsApp button clicks
     const whatsappBtn = document.querySelector('.whatsapp-btn');
