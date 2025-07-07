@@ -62,6 +62,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 const result = await response.json();
                 
                 if (result.success) {
+                    // Track successful form submission
+                    if (window.va) {
+                        window.va('track', 'Quote Request Submitted', {
+                            monthly_support: data.monthlySupport === 'yes'
+                        });
+                    }
+                    
                     showNotification('🎉 הצעת המחיר אושרה בהצלחה! נשלח אלייך מייל אישור ונחזור אלייך תוך 24 שעות.', 'success');
                     this.reset();
                 } else {
@@ -186,6 +193,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const elementsToAnimate = document.querySelectorAll('.service-card, .additional-services, .additional-info, .contact-info');
     elementsToAnimate.forEach(el => {
         observer.observe(el);
+    });
+    
+    // Track WhatsApp button clicks
+    const whatsappBtn = document.querySelector('.whatsapp-btn');
+    if (whatsappBtn) {
+        whatsappBtn.addEventListener('click', () => {
+            if (window.va) {
+                window.va('track', 'WhatsApp Button Clicked');
+            }
+        });
+    }
+    
+    // Track phone button clicks
+    const phoneBtn = document.querySelector('.phone-btn');
+    if (phoneBtn) {
+        phoneBtn.addEventListener('click', () => {
+            if (window.va) {
+                window.va('track', 'Phone Button Clicked');
+            }
+        });
+    }
+    
+    // Track CTA button clicks
+    const ctaButtons = document.querySelectorAll('.cta-button');
+    ctaButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (window.va) {
+                const buttonText = btn.textContent.trim();
+                window.va('track', 'CTA Button Clicked', {
+                    button_text: buttonText
+                });
+            }
+        });
     });
 });
 
