@@ -539,36 +539,72 @@ tr:hover td {
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 30px;
+    padding: 25px;
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+}
+
+.direct-contact p {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #6c757d;
+    font-weight: 500;
 }
 
 .whatsapp-btn,
 .phone-btn {
-    padding: 15px 30px;
-    border-radius: 4px;
+    padding: 16px 32px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
     transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    min-width: 160px;
 }
 
 .whatsapp-btn {
-    background: #25D366;
+    background: linear-gradient(135deg, #25D366, #20b558);
     color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.whatsapp-btn::before {
+    content: "📱";
+    font-size: 1.2rem;
 }
 
 .whatsapp-btn:hover {
-    background: #20b558;
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #20b558, #1da851);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }
 
 .phone-btn {
-    background: #040240;
+    background: linear-gradient(135deg, #040240, #0a0a5c);
     color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.phone-btn::before {
+    content: "📞";
+    font-size: 1.2rem;
 }
 
 .phone-btn:hover {
-    background: #7D8C0B;
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #7D8C0B, #a4b50f);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(125, 140, 11, 0.4);
 }
 
 /* Footer */
@@ -648,6 +684,14 @@ tr:hover td {
     
     .direct-contact {
         flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .whatsapp-btn,
+    .phone-btn {
+        padding: 15px 28px;
+        min-width: 150px;
     }
     
     .footer-content {
@@ -744,8 +788,15 @@ tr:hover td {
     
     .whatsapp-btn,
     .phone-btn {
-        padding: 12px 20px;
+        padding: 14px 24px;
         font-size: 1rem;
+        min-width: 140px;
+    }
+    
+    .direct-contact {
+        padding: 20px;
+        gap: 15px;
+        margin-top: 25px;
     }
     
     .form-group input,
