@@ -63,7 +63,7 @@ body {
 .cta-button {
     display: inline-block;
     padding: 12px 24px;
-    border-radius: 8px;
+    border-radius: 4px;
     text-decoration: none;
     font-weight: 500;
     font-size: 1rem;
@@ -544,7 +544,7 @@ tr:hover td {
 .whatsapp-btn,
 .phone-btn {
     padding: 15px 30px;
-    border-radius: 8px;
+    border-radius: 4px;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
