@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/send-quote-request.js": {
+      "maxDuration": 10
+    }
+  }
+} 
